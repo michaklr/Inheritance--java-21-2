@@ -1,16 +1,16 @@
 package de.neuefische.studendb.db;
 
-import de.neuefische.studendb.model.Student;
+import de.neuefische.studendb.model.HistoryStudent;
 
 public class StudentDb {
 
-    private Student[] students;
+    private HistoryStudent[] students;
 
-    public StudentDb(Student[] students) {
+    public StudentDb(HistoryStudent[] students) {
         this.students = students;
     }
 
-    public Student[] list() {
+    public HistoryStudent[] list() {
         return students;
     }
 
@@ -23,8 +23,11 @@ public class StudentDb {
         return result;
     }
 
-    public Student randomStudent() {
+    public HistoryStudent randomStudent() {
         int index = (int) Math.floor(Math.random() * students.length);
         return students[index];
     }
+
+
+
 }

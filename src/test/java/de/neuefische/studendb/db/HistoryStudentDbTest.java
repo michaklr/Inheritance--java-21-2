@@ -1,33 +1,33 @@
 package de.neuefische.studendb.db;
 
-import de.neuefische.studendb.model.Student;
+import de.neuefische.studendb.model.HistoryStudent;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertArrayEquals;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-class StudentDbTest {
+class HistoryStudentDbTest {
 
     @Test
     @DisplayName("list() returns all students in the db")
     public void testList() {
         // Given
-        Student[] students = new Student[]{
-                new Student("Jane", "42"),
-                new Student("Klaus", "13"),
-                new Student("Franky", "100")
+        HistoryStudent[] students = new HistoryStudent[]{
+                new HistoryStudent("Jane", "42"),
+                new HistoryStudent("Klaus", "13"),
+                new HistoryStudent("Franky", "100")
         };
         StudentDb studentDb = new StudentDb(students);
 
         // When
-        Student[] actual = studentDb.list();
+        HistoryStudent[] actual = studentDb.list();
 
         // Then
-        Student[] expected = new Student[]{
-                new Student("Jane", "42"),
-                new Student("Klaus", "13"),
-                new Student("Franky", "100")
+        HistoryStudent[] expected = new HistoryStudent[]{
+                new HistoryStudent("Jane", "42"),
+                new HistoryStudent("Klaus", "13"),
+                new HistoryStudent("Franky", "100")
         };
         assertArrayEquals(expected, actual);
     }
@@ -36,10 +36,10 @@ class StudentDbTest {
     @DisplayName("toString() returns a formatted list of all students")
     public void testToString() {
         // Given
-        Student[] students = new Student[]{
-                new Student("Jane", "42"),
-                new Student("Klaus", "13"),
-                new Student("Franky", "100")
+        HistoryStudent[] students = new HistoryStudent[]{
+                new HistoryStudent("Jane", "42"),
+                new HistoryStudent("Klaus", "13"),
+                new HistoryStudent("Franky", "100")
         };
         StudentDb studentDb = new StudentDb(students);
 
@@ -52,4 +52,7 @@ class StudentDbTest {
                 + "Student{name='Franky', id='100'}\n";
         assertEquals(expected, actual);
     }
+
+
+
 }
